@@ -52,6 +52,9 @@ function testSquareBy(){
     if (squareBy(10, 2) !== 100){
         document.getElementById("testSquareByResult").innerHTML = "10 square by 2 gives 100, but the square by function gives " + squareBy(10, 2);
     }
+    else if (squareBy(5, 0) !== 1){
+        document.getElementById("testSquareByResult").innerHTML = "5 square by 0 gives 1, but the square by function gives " + squareBy(5, 0);
+    }
     else{
         document.getElementById("testSquareByResult").innerHTML = "test passed";
     }
@@ -60,6 +63,12 @@ function testSquareBy(){
 function testSquareRoot(){
     if (squareRoot(9) !== 3){
         document.getElementById("testSquareRootResult").innerHTML = "Square root of 9 is 3, but the square root function gives " + squareRoot(9);
+    }
+    else if (squareRoot(2) !== 1.4142){
+        document.getElementById("testSquareRootResult").innerHTML = "Square root of 2 is 1.4142, but the square root function gives " + squareRoot(2);
+    }
+    else if (squareRoot(-1) !== "error"){
+        document.getElementById("testSquareRootResult").innerHTML = "-1 is invalid as an input for square root, but the square root function gives " + squareRoot(-1);
     }
     else{
         document.getElementById("testSquareRootResult").innerHTML = "test passed";
