@@ -41,14 +41,35 @@ function testMultiplication(){
 function testDivision(){
     if (division(10, 2) !== 5){
         //throw new Error("10 divided by 2 gives 5, but the division function gives "+ division(10, 2));
-        document.getElementById("testDivisionResult").innerHTML = "10 divided by 2 gives 5, but the division function gives "+ division(10, 2);
+        document.getElementById("testDivisionResult").innerHTML = "10 divided by 2 gives 5, but the division function gives " + division(10, 2);
     }
     else{
         document.getElementById("testDivisionResult").innerHTML = "test passed";
     }
 }
 
+function testSquareBy(){
+    if (squareBy(10, 2) !== 100){
+        document.getElementById("testSquareByResult").innerHTML = "10 square by 2 gives 100, but the square by function gives " + squareBy(10, 2);
+    }
+    else{
+        document.getElementById("testSquareByResult").innerHTML = "test passed";
+    }
+}
+
+function testSquareRoot(){
+    if (squareRoot(9) !== 3){
+        document.getElementById("testSquareRootResult").innerHTML = "Square root of 9 is 3, but the square root function gives " + squareRoot(9);
+    }
+    else{
+        document.getElementById("testSquareRootResult").innerHTML = "test passed";
+    }
+
+}
+
 testAddition();
 testSubtraction();
 testMultiplication();
 testDivision();
+testSquareBy();
+testSquareRoot();

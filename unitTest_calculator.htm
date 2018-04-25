@@ -2,17 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Unit Test for Calculator</title>
+    <title>Unit Test for Calculator App</title>
 </head>
 <body>
+    <label><h1>Unit test for the math functions: </h1></label>
+        <table border="2">
+            <tr>
+                <th>Test description: </th>
+                <th>Test result</th>
+            </tr>
+            <tr>
+                <td>Unit test for addition function</td>
+                <td id="testAdditionResult"></td>
+            </tr>
+            <tr>
+                <td>Unit test for subtraction function</td>
+                <td id="testSubtractionResult"></td>
+            </tr>
+            <tr>
+                <td>Unit test for multiplication function</td>
+                <td id="testMultiplicationResult"></td>
+            </tr>
+            <tr>
+                <td>Unit test for division function</td>
+                <td id="testDivisionResult"></td>
+            </tr>
+            <tr>
+                <td>Unit test for square by function</td>
+                <td id="testSquareByResult"></td>
+            </tr>
+            <tr>
+                <td>Unit test for square root function</td>
+                <td id="testSquareRootResult"></td>
+            </tr>
 
-    <p>The unit test result for addition function: <span id="testAdditionResult"></span></p>
+        </table>
+    <br/><br/>
+    <label><h1>Unit Test for calController: </h1></label>
+    <div data-ng-app="calculatorApp">
+        <div data-ng-controller="calController">
+            <h4 data-ng-model="firstNumber">2</h4>
+            <h4 data-ng-model="operation">+</h4>
+            <h4 data-ng-model="secondNumber">2</h4>
+            <button data-ng-click="updateResult()">Calculate</button>
+            {{result}}
+        </div>
 
-    <p>The unit test result for subtraction function: <span id="testSubtractionResult"></span></p>
+    </div>
 
-    <p>The unit test result for multiplication function: <span id="testMultiplicationResult"></span> </p>
-
-    <p>The unit test result for division function: <span id="testDivisionResult"></span></p>
 
     <script src="functions.js"></script>
     <script src="testfunctions.js"></script>
