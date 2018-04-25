@@ -43,6 +43,9 @@ function testDivision(){
         //throw new Error("10 divided by 2 gives 5, but the division function gives "+ division(10, 2));
         document.getElementById("testDivisionResult").innerHTML = "10 divided by 2 gives 5, but the division function gives " + division(10, 2);
     }
+    else if (division(10, 0) !== "error"){
+        document.getElementById("testDivisionResult").innerHTML = "no numbers can be divided by 0, but the division function gives " + division(10, 2);
+    }
     else{
         document.getElementById("testDivisionResult").innerHTML = "test passed";
     }
@@ -50,9 +53,11 @@ function testDivision(){
 
 function testSquareBy(){
     if (squareBy(10, 2) !== 100){
+        //normal test case
         document.getElementById("testSquareByResult").innerHTML = "10 square by 2 gives 100, but the square by function gives " + squareBy(10, 2);
     }
     else if (squareBy(5, 0) !== 1){
+        //test case : for a^0, a can be any number, the result will still be 1
         document.getElementById("testSquareByResult").innerHTML = "5 square by 0 gives 1, but the square by function gives " + squareBy(5, 0);
     }
     else{
@@ -62,12 +67,16 @@ function testSquareBy(){
 
 function testSquareRoot(){
     if (squareRoot(9) !== 3){
+        //test using perfect square
         document.getElementById("testSquareRootResult").innerHTML = "Square root of 9 is 3, but the square root function gives " + squareRoot(9);
     }
-    else if (squareRoot(2) !== 1.4142){
-        document.getElementById("testSquareRootResult").innerHTML = "Square root of 2 is 1.4142, but the square root function gives " + squareRoot(2);
+    else if (squareRoot(2) !== 1.414){
+        //test using the non-perfect square
+        document.getElementById("testSquareRootResult").innerHTML = "Square root of 2 is 1.414, but the square root function gives " + squareRoot(2);
     }
     else if (squareRoot(-1) !== "error"){
+        //test using negative number
+        //should return error as there is no negative number that can be square rooted
         document.getElementById("testSquareRootResult").innerHTML = "-1 is invalid as an input for square root, but the square root function gives " + squareRoot(-1);
     }
     else{
