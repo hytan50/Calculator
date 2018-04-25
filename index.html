@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="calculatorApp" ng-cloak>
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+    <style>
+        [ng\:cloak],[ng-cloak],\.ng-cloak{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div data-ng-controller = "calController">
+        <input type = "number" data-ng-model = "firstNumber">
+        <select data-ng-model = "operation">
+            <option value = "" disabled selected> -- select an operation --</option>
+            <option value = "+"> + </option>
+            <option value = "-"> - </option>
+            <option value = "*"> * </option>
+            <option value = "/"> / </option>
+        </select>
+        <input type = "number" data-ng-model = "secondNumber">
+        <button data-ng-click = "updateResult()"> Calculate </button>
+        <br /><br />
+
+        {{result}}
+        {{errorMessage}}
+
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="functions.js"></script>
+
+    <script src="calculatorApp.js"></script>
+    <script src="calController.js"></script>
+</body>
+</html>
