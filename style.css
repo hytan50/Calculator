@@ -1,0 +1,13 @@
+.title {
+    font-family: cursive;
+    text-tranform: capitalize;
+}
+
+
+[ng\:cloak],[ng-cloak],\.ng-cloak{
+    display: none;
+}
+
+.error {
+    color : red;
+}
