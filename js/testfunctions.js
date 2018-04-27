@@ -40,43 +40,55 @@ function testMultiplication(){
 //unit test for function "division"
 function testDivision(){
     if (division(10, 2) !== 5){
-        //throw new Error("10 divided by 2 gives 5, but the division function gives "+ division(10, 2));
+        // normal test case
         document.getElementById("testDivisionResult").innerHTML = "10 divided by 2 gives 5, but the division function gives " + division(10, 2);
     }
     else if (division(10, 0) !== "error"){
+        // test case : division by 0 will cause error
         document.getElementById("testDivisionResult").innerHTML = "no numbers can be divided by 0, but the division function gives " + division(10, 2);
     }
     else{
+        // all test cases passed
         document.getElementById("testDivisionResult").innerHTML = "test passed";
     }
 }
 
 function testSquareBy(){
     if (squareBy(10, 2) !== 100){
-        //normal test case
+        // normal test case
         document.getElementById("testSquareByResult").innerHTML = "10 square by 2 gives 100, but the square by function gives " + squareBy(10, 2);
     }
     else if (squareBy(5, 0) !== 1){
-        //test case : for a^0, a can be any number, the result will still be 1
+        // test case : for a^0, a can be any number, the result will still be 1
         document.getElementById("testSquareByResult").innerHTML = "5 square by 0 gives 1, but the square by function gives " + squareBy(5, 0);
     }
+    else if (squareBy(2, -2) !== 0.25){
+        // test case : power by negative numbers will cause division to take place
+        document.getElementById("testSquareByResult").innerHTML = "2 square by -2 gives 0.25, but the square by function gives " + squareBy(2, -2);
+    }
     else{
+        // pass all test cases
         document.getElementById("testSquareByResult").innerHTML = "test passed";
     }
 }
 
 function testSquareRoot(){
-    if (squareRoot(9) !== 3){
-        //test using perfect square
+    if (squareRoot(0) !== 0){
+        // test using 0
+        document.getElementById("testSquareRootResult").innerHTML = "Square root of 0 is 0, but the square root function gives " + squareRoot(9);
+    }
+
+    else if (squareRoot(9) !== 3){
+        // test using perfect square
         document.getElementById("testSquareRootResult").innerHTML = "Square root of 9 is 3, but the square root function gives " + squareRoot(9);
     }
     else if (squareRoot(2) !== 1.414){
-        //test using the non-perfect square
+        // test using the non-perfect square
         document.getElementById("testSquareRootResult").innerHTML = "Square root of 2 is 1.414, but the square root function gives " + squareRoot(2);
     }
     else if (squareRoot(-1) !== "error"){
-        //test using negative number
-        //should return error as there is no negative number that can be square rooted
+        // test case : negative number
+        // should return error as there is no negative number that can be square rooted
         document.getElementById("testSquareRootResult").innerHTML = "-1 is invalid as an input for square root, but the square root function gives " + squareRoot(-1);
     }
     else{

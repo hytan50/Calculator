@@ -8,23 +8,16 @@
 <body>
     <h1 class="title">Basic Calculator</h1>
     <div id="input" data-ng-controller = "calController">
-        <p> Enter your first number : <input type = "number" data-ng-model = "firstNumber"></p>
+        <p> Enter your first number : <input type = "number" data-ng-model = "firstNumber" /></p>
         <p> Select an operation :
-        <select data-ng-model = "operation">
-            <option value = "" disabled selected> -- select an operation --</option>
-            <option value = "+"> + </option>
-            <option value = "-"> - </option>
-            <option value = "*"> * </option>
-            <option value = "/"> / </option>
-            <option value = "^"> ^ (square by)</option>
-            <option value = "√">√ (square root)</option>
+        <select data-ng-model = "operation" ng-options="operation for operation in operations">
         </select></p>
         <p> Enter your second number : <input type = "number" data-ng-model = "secondNumber"></p>
         <br/>
         <button data-ng-click = "updateResult()"> Calculate </button>
         <br /><br />
 
-        <h2>Result : &emsp;{{result}}</h2>
+        <h2>{{showResult}}</h2>
         <h2 class="error">{{errorMessage}}</h2>
 
 

@@ -27,14 +27,31 @@ function squareBy(x, y){
     var i, result;
     i = y;
     result = 1;
-    while (i>0){
-        if (i%2 === 0){
-            result *= x*x;
-            i -= 2;
+    if (y > 0) {
+        // y is positive number
+        while (i > 0) {
+            if (i % 2 === 0) {
+                result *= x * x;
+                i -= 2;
+            }
+            else {
+                result *= x;
+                i--;
+            }
         }
-        else{
-            result *= x;
-            i--;
+    }
+    else{
+        // y is negative number
+        i *= -1;
+        while (i > 0) {
+            if (i % 2 === 0) {
+                result /= x * x;
+                i -= 2;
+            }
+            else {
+                result /= x;
+                i--;
+            }
         }
     }
     return result;
