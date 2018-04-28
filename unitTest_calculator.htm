@@ -8,7 +8,7 @@
     <label><h1>Unit test for the math functions: </h1></label>
         <table border="2">
             <tr>
-                <th>Test description: </th>
+                <th>Test description </th>
                 <th>Test result</th>
             </tr>
             <tr>
@@ -37,22 +37,11 @@
             </tr>
 
         </table>
-    <br/><br/>
-    <label><h1>Unit Test for calController: </h1></label>
-    <div data-ng-app="calculatorApp">
-        <div data-ng-controller="calController">
-            <h4 data-ng-model="firstNumber">2</h4>
-            <h4 data-ng-model="operation">+</h4>
-            <h4 data-ng-model="secondNumber">2</h4>
-            <button data-ng-click="updateResult()">Calculate</button>
-            {{result}}
-        </div>
-
-    </div>
-
 
     <script src="js/functions.js"></script>
     <script src="js/testfunctions.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/calController.js"></script>
 </body>
+
 </html>

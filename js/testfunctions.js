@@ -66,30 +66,41 @@ function testSquareBy(){
         // test case : power by negative numbers will cause division to take place
         document.getElementById("testSquareByResult").innerHTML = "2 square by -2 gives 0.25, but the square by function gives " + squareBy(2, -2);
     }
+    else if (squareBy(2, 0.5) !== "error"){
+        document.getElementById("testSquareByResult").innerHTML = "2 square by 0.5 should gives error as it doesn't accept non-integers for second number, but the square by function gives " + squareBy(2, 0.5);
+    }
     else{
         // pass all test cases
         document.getElementById("testSquareByResult").innerHTML = "test passed";
     }
+
 }
 
 function testSquareRoot(){
-    if (squareRoot(0) !== 0){
+    if (squareRoot(0, 0) !== 0){
         // test using 0
-        document.getElementById("testSquareRootResult").innerHTML = "Square root of 0 is 0, but the square root function gives " + squareRoot(9);
+        document.getElementById("testSquareRootResult").innerHTML = "Square root of 0 is 0, but the square root function gives " + squareRoot(0, 0);
     }
-
-    else if (squareRoot(9) !== 3){
+    else if (squareRoot(1, 9) !== 3){
         // test using perfect square
-        document.getElementById("testSquareRootResult").innerHTML = "Square root of 9 is 3, but the square root function gives " + squareRoot(9);
+        document.getElementById("testSquareRootResult").innerHTML = "Square root of 9 is 3, but the square root function gives " + squareRoot(1, 9);
     }
-    else if (squareRoot(2) !== 1.414){
+    else if (squareRoot(1, 2) !== 1.414){
         // test using the non-perfect square
-        document.getElementById("testSquareRootResult").innerHTML = "Square root of 2 is 1.414, but the square root function gives " + squareRoot(2);
+        document.getElementById("testSquareRootResult").innerHTML = "Square root of 2 is 1.414, but the square root function gives " + squareRoot(1, 2);
     }
-    else if (squareRoot(-1) !== "error"){
+    else if (squareRoot(2, 9) !== 6){
+        // test case : an integer * squareRoot( perfect square)
+        document.getElementById("testSquareRootResult").innerHTML = "Square root of 2√(9) is 6, but the square root function gives " + squareRoot(2, 9);
+    }
+    else if (squareRoot(2, 2) !== 2.828){
+        // test case : an integer * squareRoot( non-perfect square)
+        document.getElementById("testSquareRootResult").innerHTML = "Square root of 2√(2) is 2.828, but the square root function gives " + squareRoot(2, 2);
+    }
+    else if (squareRoot(1, -1) !== "error"){
         // test case : negative number
         // should return error as there is no negative number that can be square rooted
-        document.getElementById("testSquareRootResult").innerHTML = "-1 is invalid as an input for square root, but the square root function gives " + squareRoot(-1);
+        document.getElementById("testSquareRootResult").innerHTML = "-1 is invalid as an input for square root, but the square root function gives " + squareRoot(1, -1);
     }
     else{
         document.getElementById("testSquareRootResult").innerHTML = "test passed";

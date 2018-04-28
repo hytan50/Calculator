@@ -24,6 +24,12 @@ function squareBy(x, y){
         return 1;
     }
 
+    //return error if y is a decimal number
+    if (!Number.isInteger(y)){
+        return "error";
+    }
+
+
     var i, result;
     i = y;
     result = 1;
@@ -57,14 +63,14 @@ function squareBy(x, y){
     return result;
 }
 
-function squareRoot(x){
+function squareRoot(x, y){
     //square root of 0 is 0
-    if (x === 0){
+    if (x === 0 || y === 0){
         return 0;
     }
 
     //square root does not accept negative answers
-    if (x < 0){
+    if (y < 0){
         return "error";
     }
 
@@ -74,33 +80,33 @@ function squareRoot(x){
     counter = 1;
     accept = false;
 
-    //return the answer if x is a perfect square, or find the range of the possible answer
+    //return the answer if y is a perfect square, or find the range of the possible answer
     while (!rangeFound){
-        if (squareBy(counter, 2) === x){
-            return counter;
+        if (squareBy(counter, 2) === y){
+            return x * counter;
         }
-        else if (squareBy(counter, 2) < x){
+        else if (squareBy(counter, 2) < y){
             floor = counter;
         }
-        else if (squareBy(counter, 2) > x){
+        else if (squareBy(counter, 2) > y){
             ceil = counter;
             rangeFound = true;
         }
         counter++;
     }
 
-    //while x is not a perfect number
+    //while y is not a perfect number
     var average;
     var squared;
     while (!accept){
         average = (floor + ceil)/2;
         squared = Math.round(squareBy(average, 2)*1000)/1000;
-        if (squared === x){
+        if (squared === y){
             accept = true;
-            return Math.round(average*1000)/1000;
+            return x * Math.round(average*1000)/1000;
         }
         else{
-            if (squared > x){
+            if (squared > y){
                 ceil = average;
             }
             else{
