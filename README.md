@@ -27,7 +27,7 @@ A simple calculator web application using AngularJS. Open the index.html to run 
 * AngularJS
 
 ## Test With
-* Karma (Node.js)
+* Karma 
 
 ## IDE used
 * JetBrains WebStorm
